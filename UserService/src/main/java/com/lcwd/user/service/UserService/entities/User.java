@@ -27,7 +27,9 @@ public class User {
     private String about;
 
     //it means the data won't be stored in database
+    //incoming from other service, which is why transient
+    //dont need to save it in our db
     @Transient
     //other user properties can be added when needed
-    private List<Ratings> ratings = new ArrayList<>();
+    private List<Rating> ratings = new ArrayList<>();
 }

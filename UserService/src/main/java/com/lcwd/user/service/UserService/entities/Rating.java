@@ -10,7 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 //no need to store in database as this will be the data received from another service
-public class Ratings {
+public class Rating {
     private String ratingId;
     private String userId;
     private String hotelId;
