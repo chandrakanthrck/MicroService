@@ -15,6 +15,7 @@ import org.slf4j.Logger;
 
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.UUID;
 import java.util.stream.Collectors;
@@ -56,10 +57,12 @@ public class UserServiceImpl implements UserService {
         //restTemplate.getForObject -> sendsa HTTP GET request to the specified URL and converts it into an instance of the specified class
         //ArrayList -> to desrialize it to ArrayList of Rating object
         //but the drawback with this is that the route is fine, but we want to make the domain address dynamic
-        ArrayList<Rating> ratingsOfUser = restTemplate.getForObject("http://localhost:8083/ratings/users/"+user.getUserId(), ArrayList.class);
+        Rating[] ratingsOfUser = restTemplate.getForObject("http://localhost:8083/ratings/users/"+user.getUserId(), Rating[].class);
         logger.info("{}",ratingsOfUser);
 
-        ratingsOfUser.stream().map(rating -> {
+        // doing this because the stream is not able to detect the data
+        List<Rating> ratings = Arrays.stream(ratingsOfUser).toList();
+        List<Rating> ratingList = ratings.stream().map(rating -> {
             //api call to hotel service to get the hotel
             //http://localhost:8081/users/2be72313-8c76-4b07-8100-4e904726223a
             ResponseEntity<Hotel> forEntity = restTemplate.getForEntity("http://localhost:8082/hotels/"+rating.getHotelId(), Hotel.class);
@@ -70,7 +73,7 @@ public class UserServiceImpl implements UserService {
             //return to rating
             return rating;
         }).collect(Collectors.toList())
-;        user.setRatings(ratingsOfUser);
+;        user.setRatings(ratingList);
         return user;
     }
 }
