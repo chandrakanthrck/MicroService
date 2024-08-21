@@ -57,7 +57,7 @@ public class UserServiceImpl implements UserService {
         //restTemplate.getForObject -> sendsa HTTP GET request to the specified URL and converts it into an instance of the specified class
         //ArrayList -> to desrialize it to ArrayList of Rating object
         //but the drawback with this is that the route is fine, but we want to make the domain address dynamic
-        Rating[] ratingsOfUser = restTemplate.getForObject("http://localhost:8083/ratings/users/"+user.getUserId(), Rating[].class);
+        Rating[] ratingsOfUser = restTemplate.getForObject("http://RATINGSERVICE/ratings/users/"+user.getUserId(), Rating[].class);
         logger.info("{}",ratingsOfUser);
 
         // doing this because the stream is not able to detect the data
@@ -65,7 +65,7 @@ public class UserServiceImpl implements UserService {
         List<Rating> ratingList = ratings.stream().map(rating -> {
             //api call to hotel service to get the hotel
             //http://localhost:8081/users/2be72313-8c76-4b07-8100-4e904726223a
-            ResponseEntity<Hotel> forEntity = restTemplate.getForEntity("http://localhost:8082/hotels/"+rating.getHotelId(), Hotel.class);
+            ResponseEntity<Hotel> forEntity = restTemplate.getForEntity("http://HOTELSERVICE/hotels/"+rating.getHotelId(), Hotel.class);
             Hotel hotel = forEntity.getBody();
             logger.info("Response status code: {} ",forEntity.getStatusCode());
             //set the hotel rating
