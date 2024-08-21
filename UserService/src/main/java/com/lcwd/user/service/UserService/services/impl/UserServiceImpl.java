@@ -6,6 +6,7 @@ import com.lcwd.user.service.UserService.entities.User;
 import com.lcwd.user.service.UserService.exceptions.ResourceNotFoundException;
 import com.lcwd.user.service.UserService.repositories.UserRepository;
 import com.lcwd.user.service.UserService.services.UserService;
+import com.lcwd.user.service.externals.services.HotelService;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -28,6 +29,9 @@ public class UserServiceImpl implements UserService {
     //to communicate with other services
     @Autowired
     private RestTemplate restTemplate;
+    //feign client implementation on hotel service
+    @Autowired
+    private HotelService hotelService;
 
     private Logger logger = LoggerFactory.getLogger(UserServiceImpl.class);
 
@@ -65,9 +69,11 @@ public class UserServiceImpl implements UserService {
         List<Rating> ratingList = ratings.stream().map(rating -> {
             //api call to hotel service to get the hotel
             //http://localhost:8081/users/2be72313-8c76-4b07-8100-4e904726223a
-            ResponseEntity<Hotel> forEntity = restTemplate.getForEntity("http://HOTELSERVICE/hotels/"+rating.getHotelId(), Hotel.class);
-            Hotel hotel = forEntity.getBody();
-            logger.info("Response status code: {} ",forEntity.getStatusCode());
+//            ResponseEntity<Hotel> forEntity = restTemplate.getForEntity("http://HOTELSERVICE/hotels/"+rating.getHotelId(), Hotel.class);
+            //removing rest template and using feign client
+            Hotel hotel = hotelService.getHotel(rating.getHotelId());
+//            Hotel hotel = forEntity.getBody();
+//            logger.info("Response status code: {} ",forEntity.getStatusCode());
             //set the hotel rating
             rating.setHotel(hotel);
             //return to rating
