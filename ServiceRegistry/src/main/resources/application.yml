@@ -1,12 +1,5 @@
 server:
   port: 8761
-eureka:
-  instance:
-    hostname: localhost
-    #as a client don't get registered
-  client:
-    register-with-eureka: false
-    fetch-registry: false
 
 spring:
   application:
