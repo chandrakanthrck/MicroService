@@ -3,6 +3,8 @@ package com.lcwd.user.service.controllers;
 import com.lcwd.user.service.UserService.entities.User;
 import com.lcwd.user.service.UserService.services.UserService;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
+import io.github.resilience4j.ratelimiter.annotation.RateLimiter;
+import io.github.resilience4j.retry.annotation.Retry;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,16 +31,24 @@ public class UserController {
     }
 
     // Get a single user by ID
+    int retrycount = 1;
     @GetMapping("/{userId}")
-    @CircuitBreaker(name = "ratingHotelBreaker", fallbackMethod = "ratingHotelFallback")
+//    @CircuitBreaker(name = "ratingHotelBreaker", fallbackMethod = "ratingHotelFallback")
+//    @Retry(name = "rating HotelService", fallbackMethod = "ratingHotelFallback")
+    @RateLimiter(name = "userRateLimiter", fallbackMethod = "ratingHotelFallback")
     public ResponseEntity<User> getSingleUser(@PathVariable String userId) {
+
+        logger.info("Get Single User Handler: UserController");
+        logger.info("Retry count: {}", retrycount);
+        retrycount++;
         User user = userService.getUser(userId);
         return ResponseEntity.ok(user);
     }
 
     // Fallback method for Circuit Breaker
     public ResponseEntity<User> ratingHotelFallback(String userId, Exception ex) {
-        logger.info("Fallback is executed because service is down: {}", ex.getMessage());
+//        logger.info("Fallback is executed because service is down: {}", ex.getMessage());
+        logger.info("Retry count: {}", retrycount);
         User fallbackUser = new User(); // You can customize this as per your requirement
         fallbackUser.setUserId(userId);
         fallbackUser.setName("Fallback User");
