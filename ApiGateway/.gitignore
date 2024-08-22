@@ -1,0 +1,107 @@
+# Help Files
+HELP.md
+
+# Maven
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Gradle
+.gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+gradle-app.setting
+*.gradle
+
+# IntelliJ IDEA
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+
+# STS (Spring Tool Suite)
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings/
+.springBeans
+.sts4-cache
+
+# NetBeans
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+
+# VS Code
+.vscode/
+
+# Eclipse
+.classpath
+.project
+.settings/
+bin/
+tmp/
+
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Linux
+*~
+.nfs*
+
+# Log Files
+logs/
+*.log
+
+# Temporary Files
+*.swp
+*.swo
+*.bak
+*.tmp
+*.orig
+*.rej
+*.sublime-workspace
+*.sublime-project
+
+# Node Modules
+node_modules/
+
+# Coverage Reports
+coverage/
+*.lcov
+.nyc_output/
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+env.bak/
+venv.bak/
+
+# Miscellaneous
+*.lock
+.lock-wscript
+*~.nib
+*.svg
+*.log
+*.pid
+*.seed
+*.tgz
+.idea_modules/
