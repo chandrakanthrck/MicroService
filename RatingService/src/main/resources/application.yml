@@ -6,3 +6,5 @@ spring:
     mongodb:
       uri: mongodb://localhost:27017/microservices
       database: microservices
+  config:
+    import: "optional:configserver:http://localhost:8085"
