@@ -11,9 +11,3 @@ UserService is a Spring Boot application that handles user-related information. 
 ## Configuration
 - Server Port: 8081
 - Database: MySQL
-
-## How to Run
-1. Ensure that MySQL is running on `localhost:3306`.
-2. Run the application using Maven:
-   ```bash
-   mvn spring-boot:run
