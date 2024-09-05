@@ -11,9 +11,3 @@ RatingService is a Spring Boot application that manages rating-related informati
 ## Configuration
 - Server Port: 8083
 - Database: MongoDB
-
-## How to Run
-1. Ensure that MongoDB is running on `localhost:27017`.
-2. Run the application using Maven:
-   ```bash
-   mvn spring-boot:run

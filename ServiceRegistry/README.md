@@ -10,7 +10,3 @@ ServiceRegistry is a Spring Boot application that acts as a Eureka Server for se
 ## Configuration
 - Server Port: 8761
 
-## How to Run
-1. Run the application using Maven:
-   ```bash
-   mvn spring-boot:run

@@ -11,9 +11,3 @@ HotelService is a Spring Boot application that provides services for managing ho
 ## Configuration
 - Server Port: 8082
 - Database: PostgreSQL
-
-## How to Run
-1. Ensure that PostgreSQL is running on `localhost:5433`.
-2. Run the application using Maven:
-   ```bash
-   mvn spring-boot:run
