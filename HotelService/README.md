@@ -15,8 +15,7 @@ HotelService is a Spring Boot application that manages hotel-related data, such 
 - **Eureka Client**: Registers with Eureka for service discovery.
 
 ## Setup and Run
-
-1. **Clone the repository**:
+**Clone the repository**:
 ```bash
 git clone https://github.com/chandrakanthrck/MicroService.git
 ```
