@@ -42,6 +42,23 @@ Ensure that your local databases (**PostgreSQL**, **MySQL**, **MongoDB**) are ru
 
 Each microservice contains more detailed information about its own setup in their respective README files.
 
+## Config Server Integration
+
+This project integrates with a separate **Spring Cloud Config Server** for centralized configuration management. The Config Server handles environment-specific configurations for all the microservices.
+
+You can find the Config Server repository here:  
+[Config Server Repository](https://github.com/chandrakanthrck/microservice-config)
+
+### Setting Up the Config Server
+To set up the Config Server, clone the repository and follow the instructions in its README.
+
+```bash
+git clone https://github.com/your-username/config-server-repo.git
+cd config-server-repo
+mvn spring-boot:run
+```
+Once the Config Server is running, microservices will automatically fetch configurations from it.
+
 ## Swagger API Documentation
 
 Each microservice is integrated with **Swagger** for easy API documentation and testing. Once the services are running, you can access the Swagger UI for each service to explore the available API endpoints:
