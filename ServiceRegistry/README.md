@@ -16,7 +16,7 @@ ServiceRegistry is a Spring Boot application that serves as a **Eureka Server** 
 
 ## Setup and Run
 
-1. **Clone the repository**:
+**Clone the repository**:
 ```bash
 git clone https://github.com/chandrakanthrck/MicroService.git
 ```
