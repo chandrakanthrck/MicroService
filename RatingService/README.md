@@ -17,8 +17,8 @@ RatingService is a Spring Boot application that manages rating-related informati
 ## Setup and Run
 
 1. **Clone the repository**:
-   ```bash
-   git clone https://github.com/chandrakanthrck/MicroService.git
+```bash
+git clone https://github.com/chandrakanthrck/MicroService.git
 ```
 ### Navigate to the RatingService directory:
 
