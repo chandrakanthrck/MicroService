@@ -30,7 +30,7 @@ This project is a microservices-based architecture built using **Spring Boot** a
 ### Clone the repository
 To clone this repository, use the following command:
 ```bash
-git clone <repository-url>
+git clone https://github.com/chandrakanthrck/MicroService/
 ```
 ## Setting up Databases
 
