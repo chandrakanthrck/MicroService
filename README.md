@@ -47,7 +47,7 @@ Each microservice contains more detailed information about its own setup in thei
 This project integrates with a separate **Spring Cloud Config Server** for centralized configuration management. The Config Server handles environment-specific configurations for all the microservices.
 
 You can find the Config Server repository here:  
-[Config Server Repository](https://github.com/chandrakanthrck/microservice-config)
+[Config Server Repository](https://github.com/chandrakanthrck/MicroService-config-server.git)
 
 ### Setting Up the Config Server
 To set up the Config Server, clone the repository and follow the instructions in its README.
