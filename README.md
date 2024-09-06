@@ -6,19 +6,20 @@ This project is a microservices-based architecture built using **Spring Boot** a
 ## Microservices
 
 1. **HotelService**: Manages hotel-related data such as hotel details, locations, etc.
-    - [HotelService README](./hotelservice/README.md)
+    - [HotelService README](https://github.com/chandrakanthrck/MicroService/tree/main/HotelService#readme)
 
 2. **RatingService**: Manages ratings for hotels and allows users to submit and view ratings.
-    - [RatingService README](./ratingservice/README.md)
+    - [RatingService README](https://github.com/chandrakanthrck/MicroService/tree/main/RatingService#readme)
 
 3. **UserService**: Handles user-related data such as user profiles and associated actions.
-    - [UserService README](./userservice/README.md)
+    - [UserService README](https://github.com/chandrakanthrck/MicroService/tree/main/UserService#readme)
 
 4. **ServiceRegistry**: Acts as the **Eureka Server** for service discovery.
-    - [ServiceRegistry README](./serviceregistry/README.md)
+    - [ServiceRegistry README](https://github.com/chandrakanthrck/MicroService/tree/main/ServiceRegistry#readme)
 
 5. **ApiGateway**: Provides a single entry point for all the services through a gateway.
-    - [ApiGateway README](./apigateway/README.md)
+    - [ApiGateway README](https://github.com/chandrakanthrck/MicroService/tree/main/ApiGateway#readme)
+
 
 ## Project Setup
 
