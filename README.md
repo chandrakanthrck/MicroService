@@ -20,7 +20,6 @@ This project is a microservices-based architecture built using **Spring Boot** a
 5. **ApiGateway**: Provides a single entry point for all the services through a gateway.
     - [ApiGateway README](https://github.com/chandrakanthrck/MicroService/tree/main/ApiGateway#readme)
 
-
 ## Project Setup
 
 ### Prerequisites
