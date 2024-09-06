@@ -1,17 +1,43 @@
-# ApiGateway Service
+# ApiGateway
 
 ## Overview
-The **ApiGateway** is a microservice that serves as a single entry point to the other microservices in the system. It routes requests to the appropriate services (such as `HotelService`, `RatingService`, and `UserService`) and provides centralized access through a single API endpoint.
-
-This gateway uses **Spring Cloud Gateway** to manage routing, load balancing, and security across multiple services.
+ApiGateway is a Spring Boot application that acts as a gateway for all microservices in the system. It provides a single entry point for client requests, routing them to the appropriate microservices. The ApiGateway integrates with Eureka for service discovery and dynamic routing, offering load balancing and security features.
 
 ## Features
-- **Routing**: Routes requests to the appropriate microservice based on the URL path.
-- **Load Balancing**: Distributes the load among the instances of microservices.
-- **Cross-Origin Resource Sharing (CORS)**: Manages CORS to allow or restrict resources.
-- **Security**: (Optional) Integrates with security layers (can integrate with JWT, OAuth).
+- **Centralized Routing**: Routes client requests to the appropriate microservice.
+- **Service Discovery**: Integrates with Eureka Server for dynamic routing of requests.
+- **Load Balancing**: Distributes incoming requests across multiple instances of microservices.
+- **Security**: Acts as a gatekeeper, providing centralized authentication and security features.
 
-## Technologies
+## Configuration
+- **Server Port**: `8080` (Default for ApiGateway)
+- **Eureka Client**: Registers with Eureka for dynamic service discovery.
+
+## Setup and Run
+
+**Clone the repository**:
+```bash
+git clone https://github.com/chandrakanthrck/MicroService.git
+```
+### Navigate to the ApiGateway directory:
+
+```bash
+cd ApiGateway
+```
+### Run the application:
+
+```bash
+mvn spring-boot:run
+```
+
+
+### Important Endpoints:
+- **Ratings API**: [http://localhost:8080](http://localhost:8080) - The base URL for accessing rating-related endpoints.
+- **Eureka Dashboard**: [http://localhost:8761](http://localhost:8761) - View the service registered in Eureka.
+
+- ### Key Dependencies:
 - **Spring Boot**
-- **Spring Cloud Gateway**
-- **Spring Cloud Eureka** (for service discovery)
+- **Spring Data MongoDB**
+- **MongoDB**
+- **Spring Cloud Eureka Client**
+- **Spring Cloud Netflix**
