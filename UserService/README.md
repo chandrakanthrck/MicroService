@@ -33,7 +33,7 @@ mvn spring-boot:run
 
 
 ### Important Endpoints:
-- **Ratings API**: [http://localhost:8081](http://localhost:8081) - The base URL for accessing rating-related endpoints.
+- **UserService API**: [http://localhost:8081](http://localhost:8081) - The base URL for accessing UserService-related endpoints.
 - **Eureka Dashboard**: [http://localhost:8761](http://localhost:8761) - View the service registered in Eureka.
 
 ### Key Dependencies:
