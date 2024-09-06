@@ -19,7 +19,7 @@ HotelService is a Spring Boot application that manages hotel-related data, such 
 ```bash
 git clone https://github.com/chandrakanthrck/MicroService.git
 ```
-### Navigate to the RatingService directory:
+### Navigate to the HotelService directory:
 ```bash
 cd HotelService
 ```
