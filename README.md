@@ -49,14 +49,6 @@ This project integrates with a separate **Spring Cloud Config Server** for centr
 You can find the Config Server repository here:  
 [Config Server Repository](https://github.com/chandrakanthrck/MicroService-config-server.git)
 
-### Setting Up the Config Server
-To set up the Config Server, clone the repository and follow the instructions in its README.
-
-```bash
-git clone https://github.com/your-username/config-server-repo.git
-cd config-server-repo
-mvn spring-boot:run
-```
 Once the Config Server is running, microservices will automatically fetch configurations from it.
 
 ## Swagger API Documentation
