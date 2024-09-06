@@ -30,7 +30,7 @@ mvn spring-boot:run
 
 
 ### Important Endpoints:
-- **HotelService API**: [http://localhost:8082](http://localhost:8082) - The base URL for accessing rating-related endpoints.
+- **HotelService API**: [http://localhost:8082](http://localhost:8082) - The base URL for accessing HotelService-related endpoints.
 - **Eureka Dashboard**: [http://localhost:8761](http://localhost:8761) - View the service registered in Eureka.
 
 ### Key Dependencies:
